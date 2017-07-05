@@ -14,16 +14,13 @@ sess
 ilists,class_ids = [], []
 
 
-pathImage = "/rigel/edu/coms4995/datasets/pets"
+pathImage = "/rigel/edu/coms4995/datasets/pets" ## this should be replaced by a stored datapath on a GPU cluster
 imageDoc = os.listdir(pathImage)
 img = [x for x in imageDoc]
 
-pathTrue = "/rigel/edu/coms4995/users/au2205/homework-v-auygur/list.txt"
+pathTrue = "/rigel/edu/coms4995/users/au2205/homework-v-auygur/list.txt" ## this should be replaced by a stored datapath on a GPU cluster
 with open(pathTrue, "r") as p:
     lines = p.readlines()
-
-
-# count = 0
 
 for l in lines:
     if l[0] == "#":
@@ -34,9 +31,7 @@ for l in lines:
         class_id = l[1]
         ilists.append(image.load_img(pathImage+"/" + name, target_size=(224, 224))) 
         class_ids.append(class_id)
-    #     count+=1
-    # if count == 500:
-    #     break
+
 
 model = applications.VGG16(include_top=False, weights='imagenet')
 
@@ -58,7 +53,6 @@ For Logistic Reg with C = 1 following results:
 ('Test score:', 0.88683351468988025)
 
 Other Multiple C values [0.1,0.2,0.8,2,5,10] were also tested, they were giving less than 0.88 Test Scores)
-
 
 We also tested MultinomialNB
 ('Train score:', 0.93268009435674104)
