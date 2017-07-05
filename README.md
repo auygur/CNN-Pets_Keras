@@ -6,7 +6,7 @@ Approach:  Features are stored on disk so we don't have to recompute them for mo
 
 Cross-validation score (88%):
 <p align="center">
-  <img src="crossval-score.jpg"/>
+  <img src="crossval-score.JPG"/>
 </p>
 
 ## Data 
